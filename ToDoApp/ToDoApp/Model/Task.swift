@@ -7,8 +7,9 @@
 
 import Foundation
 
-public struct Task: Codable {
-    public var id: Int
+public struct Task: Codable, Hashable {
+    public var id: Int?
+    public var userId: Int
     public var title: String
     public var date: Date
     public var category: String

@@ -12,8 +12,10 @@ open class TaskListTVCell: UITableViewCell {
 
     let wrapperView = UIView()
     let titleLabel = UILabel()
+    let subtitleLabel = UILabel()
     let descriptionLabel = UILabel()
-    //TODO
+    let tagLabel = UILabel()
+    let dateLabel = UILabel()
 
     var data: Task? {
         didSet {
@@ -36,7 +38,9 @@ open class TaskListTVCell: UITableViewCell {
         prepareWrapper()
         prepareTitleLabel()
         prepareDisclosureIcon()
-        //TODO
+        prepareSubtitleLabel()
+        prepareTagViews()
+        prepareDateViews()
     }
 
     func prepareWrapper() {
@@ -60,6 +64,17 @@ open class TaskListTVCell: UITableViewCell {
         titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
     }
 
+    func prepareSubtitleLabel() {
+        wrapperView.addSubview(subtitleLabel)
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subtitleLabel.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 20).isActive = true
+        subtitleLabel.trailingAnchor.constraint(equalTo: wrapperView.trailingAnchor, constant: -20).isActive = true
+        subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+        subtitleLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        subtitleLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        subtitleLabel.textColor = .lightGray
+    }
+
     func prepareDisclosureIcon() {
         let imageView = UIImageView(image: UIImage(systemName: "chevron.forward"))
         imageView.tintColor = .lightGray
@@ -72,8 +87,52 @@ open class TaskListTVCell: UITableViewCell {
         imageView.heightAnchor.constraint(equalToConstant: 14).isActive = true
     }
 
+    func prepareTagViews() {
+        let imageView = UIImageView(image: UIImage(systemName: "tag.fill"))
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleAspectFit
+        wrapperView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 20).isActive = true
+        imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 14).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 14).isActive = true
+
+        wrapperView.addSubview(tagLabel)
+        tagLabel.translatesAutoresizingMaskIntoConstraints = false
+        tagLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
+        tagLabel.trailingAnchor.constraint(equalTo: wrapperView.centerXAnchor, constant: 20).isActive = true
+        tagLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
+        tagLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        tagLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        tagLabel.textColor = .gray
+    }
+
+    func prepareDateViews() {
+        let imageView = UIImageView(image: UIImage(systemName: "calendar"))
+        imageView.tintColor = .gray
+        imageView.contentMode = .scaleAspectFit
+        wrapperView.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.leadingAnchor.constraint(equalTo: wrapperView.centerXAnchor, constant: 40).isActive = true
+        imageView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 14).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 14).isActive = true
+
+        wrapperView.addSubview(dateLabel)
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10).isActive = true
+        dateLabel.trailingAnchor.constraint(equalTo: wrapperView.trailingAnchor, constant: -20).isActive = true
+        dateLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        dateLabel.font = .systemFont(ofSize: 13, weight: .regular)
+        dateLabel.textColor = .gray
+    }
+
     func updateView() {
         titleLabel.text = data?.title
-        //TODO
+        subtitleLabel.text = data?.description
+        tagLabel.text = data?.category
+        dateLabel.text = data?.date.getStringDate("d.M.Y")
     }
 }

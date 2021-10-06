@@ -21,6 +21,13 @@
 		6B20517D27039E58009E481E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20517C27039E58009E481E /* DateExtension.swift */; };
 		6B20517F2703AA3A009E481E /* LabelValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B20517E2703AA3A009E481E /* LabelValueView.swift */; };
 		6B2051812703B04B009E481E /* MockTaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2051802703B04B009E481E /* MockTaskRepository.swift */; };
+		6B5C4AE6270C96160074ACE9 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4AE5270C96160074ACE9 /* CustomError.swift */; };
+		6B5C4AE8270CDDB10074ACE9 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4AE7270CDDB10074ACE9 /* UIViewControllerExtension.swift */; };
+		6B5C4AEA270CDFFF0074ACE9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4AE9270CDFFF0074ACE9 /* ActivityIndicator.swift */; };
+		6B5C4AED270D06B60074ACE9 /* TaskCreateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4AEC270D06B60074ACE9 /* TaskCreateVC.swift */; };
+		6B5C4AEF270D95440074ACE9 /* LabelInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4AEE270D95440074ACE9 /* LabelInputView.swift */; };
+		6B5C4AF1270D992A0074ACE9 /* LabelDateInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C4AF0270D992A0074ACE9 /* LabelDateInputView.swift */; };
+		6BFACC44270C787A00635890 /* ApiTaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFACC43270C787A00635890 /* ApiTaskRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		6B20517C27039E58009E481E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		6B20517E2703AA3A009E481E /* LabelValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelValueView.swift; sourceTree = "<group>"; };
 		6B2051802703B04B009E481E /* MockTaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskRepository.swift; sourceTree = "<group>"; };
+		6B5C4AE5270C96160074ACE9 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		6B5C4AE7270CDDB10074ACE9 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		6B5C4AE9270CDFFF0074ACE9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		6B5C4AEC270D06B60074ACE9 /* TaskCreateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreateVC.swift; sourceTree = "<group>"; };
+		6B5C4AEE270D95440074ACE9 /* LabelInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LabelInputView.swift; path = Libs/LabelInputView.swift; sourceTree = "<group>"; };
+		6B5C4AF0270D992A0074ACE9 /* LabelDateInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDateInputView.swift; sourceTree = "<group>"; };
+		6BFACC43270C787A00635890 /* ApiTaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTaskRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +104,7 @@
 			children = (
 				6B20516D270201CA009E481E /* UIColorExtension.swift */,
 				6B20517C27039E58009E481E /* DateExtension.swift */,
+				6B5C4AE7270CDDB10074ACE9 /* UIViewControllerExtension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -97,10 +112,11 @@
 		6B2051702703178D009E481E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B5C4AEB270D06700074ACE9 /* Libs */,
 				6B20516B2701C295009E481E /* TaskListVC.swift */,
 				6B205176270328AA009E481E /* TaskListTVCell.swift */,
 				6B20517A27039B87009E481E /* TaskDetailVC.swift */,
-				6B20517E2703AA3A009E481E /* LabelValueView.swift */,
+				6B5C4AEC270D06B60074ACE9 /* TaskCreateVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,8 +127,21 @@
 				6B20517227031A2B009E481E /* Task.swift */,
 				6B20517827032E70009E481E /* TaskRepository.swift */,
 				6B2051802703B04B009E481E /* MockTaskRepository.swift */,
+				6BFACC43270C787A00635890 /* ApiTaskRepository.swift */,
+				6B5C4AE5270C96160074ACE9 /* CustomError.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6B5C4AEB270D06700074ACE9 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				6B20517E2703AA3A009E481E /* LabelValueView.swift */,
+				6B5C4AE9270CDFFF0074ACE9 /* ActivityIndicator.swift */,
+				6B5C4AEE270D95440074ACE9 /* LabelInputView.swift */,
+				6B5C4AF0270D992A0074ACE9 /* LabelDateInputView.swift */,
+			);
+			name = Libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,16 +215,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B20517F2703AA3A009E481E /* LabelValueView.swift in Sources */,
+				6B5C4AEA270CDFFF0074ACE9 /* ActivityIndicator.swift in Sources */,
 				6B20517D27039E58009E481E /* DateExtension.swift in Sources */,
+				6B5C4AE6270C96160074ACE9 /* CustomError.swift in Sources */,
+				6B5C4AEF270D95440074ACE9 /* LabelInputView.swift in Sources */,
 				6B2051582701C10D009E481E /* AppDelegate.swift in Sources */,
 				6B20516E270201CA009E481E /* UIColorExtension.swift in Sources */,
 				6B20516C2701C295009E481E /* TaskListVC.swift in Sources */,
+				6B5C4AF1270D992A0074ACE9 /* LabelDateInputView.swift in Sources */,
 				6B205177270328AA009E481E /* TaskListTVCell.swift in Sources */,
 				6B20517B27039B87009E481E /* TaskDetailVC.swift in Sources */,
 				6B20517327031A2B009E481E /* Task.swift in Sources */,
 				6B20517927032E70009E481E /* TaskRepository.swift in Sources */,
 				6B20515A2701C10D009E481E /* SceneDelegate.swift in Sources */,
 				6B2051812703B04B009E481E /* MockTaskRepository.swift in Sources */,
+				6B5C4AED270D06B60074ACE9 /* TaskCreateVC.swift in Sources */,
+				6B5C4AE8270CDDB10074ACE9 /* UIViewControllerExtension.swift in Sources */,
+				6BFACC44270C787A00635890 /* ApiTaskRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,13 @@ public extension Date {
     static let defaultLocale = Locale(identifier: "en_US_POSIX")
     static var defaultDateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
+    static var defatultFormatter: DateFormatter {
+        let dateStringFormatter = Self.formatter
+        dateStringFormatter.dateFormat = defaultDateFormat
+        dateStringFormatter.locale = defaultLocale
+        return dateStringFormatter
+    }
+
     init(dateString: String, format: String = "yyyy-MM-dd HH:mm:ss", locale: Locale = Date.defaultLocale) {
         let dateStringFormatter = Date.formatter
         dateStringFormatter.dateFormat = format

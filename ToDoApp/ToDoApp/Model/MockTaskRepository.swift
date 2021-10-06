@@ -14,13 +14,13 @@ public class MockTaskRepository: TaskRepository {
 
     public init() {
         for index in 0...taskCount {
-            tasks.append(Task(id: index, title: "Úkol \(index)",
+            tasks.append(Task(id: index, userId: 1, title: "Úkol \(index)",
                               date: Date(), category: "Mock", description: "Popis úkol \(index)", isCompleted: index%2 == 0))
         }
     }
 
-    func getTasks() -> [Task] {
-        return tasks
+    func getTasks(completionHandler: @escaping (Result<[Task], Error>) -> Void) {
+        completionHandler(.success(tasks))
     }
 
     func getTask(id: Int) -> Task? {
@@ -32,8 +32,8 @@ public class MockTaskRepository: TaskRepository {
         return task
     }
 
-    func updateTask(task: Task) -> Task? {
-        return task
+    func updateTask(task: Task, completionHandler: @escaping (Result<Task, Error>) -> Void) {
+        completionHandler(.success(task))
     }
 
 }
