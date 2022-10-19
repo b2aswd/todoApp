@@ -83,7 +83,7 @@ open class TaskDetailVC: UIViewController {
                 switch result {
                 case .success(let data):
                     self?.data?.isCompleted = data.isCompleted
-                    self?.updateCompletedBtn()
+                    // TODO
                 case .failure(let error):
                     self?.presentError(message: error.localizedDescription)
                 }
@@ -92,7 +92,7 @@ open class TaskDetailVC: UIViewController {
     }
 
     func updateCompletedBtn() {
-        self.completedButton?.image = (data?.isCompleted == true) ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
+        // TODO
     }
 
 }

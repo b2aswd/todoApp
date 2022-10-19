@@ -57,14 +57,15 @@ open class TaskListVC: UITableViewController {
     }
 
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        // TODO
+        return 0
     }
 
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskListTVCell.description(), for: indexPath) as? TaskListTVCell else {
             return UITableViewCell()
         }
-        cell.data = data[indexPath.row]
+        // TODO
         return cell
     }
 
@@ -75,9 +76,7 @@ open class TaskListVC: UITableViewController {
     }
 
     @objc func addTapped() {
-        let createVC = TaskCreateVC()
-        let navigationController = UINavigationController(rootViewController: createVC)
-        self.present(navigationController, animated: true)
+        //TODO display TaskCreateVC with navigation controller
     }
 
     @objc func refreshControlActived() {

@@ -57,11 +57,13 @@ public class ApiTaskRepository: TaskRepository {
     }
 
     func getTask(id: Int) -> Task? {
-        return tasks.first(where: {$0.id == id})
+        //TODO - find correct Task
+        return tasks.first
     }
 
     func addTask(task: Task) -> Task? {
         self.tasks.append(task)
+        // TODO - async action
         return task
     }
 
