@@ -20,6 +20,7 @@ open class TaskDetailVC: UIViewController {
     public var activityIndicator = ActivityIndicator()
 
     public var dataSource = ApiTaskRepository()
+
     public var completedButton: UIBarButtonItem?
 
     open override func viewDidLoad() {
@@ -42,7 +43,6 @@ open class TaskDetailVC: UIViewController {
         dateLabelView.valueLabel.text = data?.date.getStringDate("d.M.Y")
         categoryLabelView.valueLabel.text = data?.category
         descriptionLabelView.valueLabel.text = data?.description
-        updateCompletedBtn()
     }
 
     func prepareNavigationBarBtn() {
@@ -67,7 +67,6 @@ open class TaskDetailVC: UIViewController {
         labelValueView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         labelValueView.topAnchor.constraint(equalTo: topAnchor ,constant: offset).isActive = true
     }
-
     @objc func trashTapped() {
         self.activityIndicator.startAnimating()
     }

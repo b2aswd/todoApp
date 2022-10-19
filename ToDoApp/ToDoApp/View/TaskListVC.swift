@@ -49,6 +49,7 @@ open class TaskListVC: UITableViewController {
 
     func prepareTableView() {
         tableView.register(TaskListTVCell.self, forCellReuseIdentifier: TaskListTVCell.description())
+
         tableView.rowHeight = 120
         tableView.separatorStyle = .none
         tableView.refreshControl = UIRefreshControl()

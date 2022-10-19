@@ -11,7 +11,7 @@ public class ApiTaskRepository: TaskRepository {
 
     private var tasks: [Task] = []
     private let baseUrl: String = "https://utb-todo-backend.docker.b2a.cz"
-    public static var userId: Int = 1
+    public static var userId: Int = 2
 
     private var listUrl: String {
         return "\(baseUrl)/user/\(Self.userId)/todo"

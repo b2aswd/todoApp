@@ -60,7 +60,7 @@ open class TaskListTVCell: UITableViewCell {
         titleLabel.leadingAnchor.constraint(equalTo: wrapperView.leadingAnchor, constant: 20).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: wrapperView.trailingAnchor, constant: -20).isActive = true
         titleLabel.topAnchor.constraint(equalTo: wrapperView.topAnchor, constant: 18).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 18).isActive = true
         titleLabel.font = .systemFont(ofSize: 17, weight: .medium)
     }
 

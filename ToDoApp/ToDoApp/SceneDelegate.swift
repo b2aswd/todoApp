@@ -24,9 +24,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func setUpGlobalNavigationBar() {
-        UINavigationBar.appearance().barTintColor = UIColor.customYellow
+
+        let customNavBarAppearance = UINavigationBarAppearance()
+
+        // Apply a red background.
+        customNavBarAppearance.configureWithOpaqueBackground()
+        customNavBarAppearance.backgroundColor = UIColor.customYellow
+
+        // Apply white colored normal and large titles.
+        customNavBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        customNavBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        // Apply white color to all the nav bar buttons.
+        let barButtonItemAppearance = UIBarButtonItemAppearance(style: .plain)
+        barButtonItemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+        barButtonItemAppearance.disabled.titleTextAttributes = [.foregroundColor: UIColor.lightText]
+        barButtonItemAppearance.focused.titleTextAttributes = [.foregroundColor: UIColor.white]
+        customNavBarAppearance.buttonAppearance = barButtonItemAppearance
+        customNavBarAppearance.backButtonAppearance = barButtonItemAppearance
+        customNavBarAppearance.doneButtonAppearance = barButtonItemAppearance
+
+
+        let appearance = UINavigationBar.appearance()
+        appearance.backgroundColor = UIColor.customYellow
+        appearance.scrollEdgeAppearance = customNavBarAppearance
+        appearance.compactAppearance = customNavBarAppearance
+        appearance.standardAppearance = customNavBarAppearance
+        if #available(iOS 15.0, *) {
+            appearance.compactScrollEdgeAppearance = customNavBarAppearance
+        }
+
         UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
